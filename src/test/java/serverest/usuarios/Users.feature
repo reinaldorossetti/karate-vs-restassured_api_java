@@ -24,12 +24,12 @@ Feature: User Management - ServeRest API
     And match response ==
       """
       {
-        quantity: '#number',
+        quantidade: '#number',
         usuarios: '#array'
       }
       """
     
-    And match response.quantity > 0
+    And match response.quantidade > 0
     And match response.usuarios == '#[_ > 0]'
     And match each response.usuarios ==
       """
