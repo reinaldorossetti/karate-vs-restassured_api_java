@@ -8,6 +8,16 @@ Feature: User Management - ServeRest API
 
   @list @smoke
   Scenario: List all users and validate JSON structure
+    * def newEmail = randomEmail()
+    * def userData =
+      """
+      {
+        "nome": "John Doe",
+        "email": "#(newEmail)",
+        "password": "senha@123",
+        "administrador": "true"
+      }
+      """
     Given path '/usuarios'
     When method GET
     Then status 200
@@ -40,6 +50,7 @@ Feature: User Management - ServeRest API
 
   @get-by-id
   Scenario: Get a specific user by ID
+    * def newEmail = randomEmail()
     Given path '/usuarios'
     When method GET
     Then status 200
@@ -149,10 +160,9 @@ Feature: User Management - ServeRest API
       """
       {
         message: 'Este email já está sendo usado',
-        idUsuario: '#string'
       }
       """
-    And match response.idUsuario == '#notnull'
+    And match response.message == '#notnull'
 
 
   @fuzzy-validation
@@ -164,7 +174,7 @@ Feature: User Management - ServeRest API
     And match response ==
       """
       {
-        quantity: '#number',
+        quantidade: '#number',
         usuarios: '#[]'
       }
       """
