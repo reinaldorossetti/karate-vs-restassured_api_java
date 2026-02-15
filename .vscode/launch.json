@@ -1,15 +1,39 @@
 {
-    "configurations": [
-        {
-            "type": "karate",
-            "request": "launch",
-            "name": "Karate: Debug",
-            "feature": "${file}",
-            "enableJavaDebugging": true,
-            "enableJsDebugging": true,
-            "skipJdkClasses": true,
-            "skipKarateFramework": true,
-            "skipKarateDependencies": true
-        }
+"version": "0.2.0",
+"configurations": [
+  {
+    "type": "karate",
+    "request": "launch",
+    "name": "Karate: Debug",
+    "feature": "${file}",
+    "enableJavaDebugging": true,
+    "enableJsDebugging": true,
+    "skipJdkClasses": true,
+    "skipKarateFramework": true,
+    "skipKarateDependencies": true
+  },
+  {
+    "type": "karate",
+    "name": "env-test",
+    "request": "launch",
+    "feature": "${file}",
+    "karateArgs": [
+      "-e",
+      "test",
+      "-t",
+      "@smoke"
     ]
+  },
+  {
+    "type": "karate",
+    "name": "parallel-run",
+    "request": "launch",
+    "feature": "src/test/java/serverest/**/*.feature",
+    "noDebug": true,
+    "karateArgs": [
+      "-T",
+      "5"
+    ]
+  }
+]
 }

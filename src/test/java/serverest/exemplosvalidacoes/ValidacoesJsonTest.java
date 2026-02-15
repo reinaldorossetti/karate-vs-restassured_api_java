@@ -1,4 +1,4 @@
-package serverest.exemplos;
+package serverest.exemplosvalidacoes;
 
 import com.intuit.karate.junit5.Karate;
 

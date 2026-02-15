@@ -539,5 +539,9 @@ Desenvolvido para fins de estudo e prática de automação de testes de API.
 - Comunidade open-source
 
 ---
+Referências:
+- https://github.com/karatelabs/karate
+- https://junit.org/junit5/ 
+- https://docs.karatelabs.io/running-tests/parallel-execution
 
 **🚀 Happy Testing!** 🥋
