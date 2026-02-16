@@ -203,29 +203,30 @@ mvn test
 mvn test -Dtest=ParallelRunner
 ```
 
-### Executar um teste específico
+O `ParallelRunner` é uma classe de teste JUnit 5 que executa as features em paralelo, filtrando por tags (ex.: `@regression`) e gerando relatórios em `target/karate-reports`.
 
-```bash
-mvn test -Dtest=UsersTest
+```java
+class ParallelRunner {
+
+    @Test
+    void testParallel() {
+        Results results = Runner.path("classpath:serverest")
+                .tags("~@ignore", "@regression")
+                .outputJunitXml(true)          // Jenkins/CI integration
+                .outputCucumberJson(true)      // Dashboard integration
+                .reportDir("target/karate-reports")
+                .parallel(6);  // 6 threads
+        assertEquals(0, results.getFailCount(), results.getErrorMessages());
+    }
+
+}
 ```
 
-### Executar por tags
+### Executar por uma função específica, usando da função
 
 ```bash
-mvn test -Dkarate.options="--tags @smoke"
-```
-
-### Executar com diferentes ambientes
-
-```bash
-mvn test -Dkarate.env=dev
-mvn test -Dkarate.env=prod
-```
-
-### Executar em paralelo (via Karate CLI)
-
-```bash
-mvn test -Dkarate.options="--threads 5"
+# Run specific test method
+mvn test -Dtest=UserTest#testSmokeTests
 ```
 
 ---
