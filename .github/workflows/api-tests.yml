@@ -22,4 +22,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-reports
-          path: target/karate-reports
+          path: |
+            target/karate-reports*
+            target/surefire-reports
