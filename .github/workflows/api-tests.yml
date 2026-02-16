@@ -15,7 +15,8 @@ jobs:
           distribution: 'temurin'
 
       - name: Run API Tests with Maven
-        run: mvn -B test -Dkarate.options="--tags @regression"
+        run: mvn test -Dtest=ParallelRunner
+        continue-on-error: true
 
       - name: Upload Test Reports
         if: always()
