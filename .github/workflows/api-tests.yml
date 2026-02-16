@@ -39,5 +39,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages  # default: gh-pages
-          publish_dir: karate-reports
-          destination_dir: reports
+          publish_dir: target/karate-reports
+          destination_dir: karate-reports
