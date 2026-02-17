@@ -165,8 +165,12 @@ Feature: Cart Management - ServeRest API
 
   @carts @regression
   Scenario: CT04 - Prevent creating more than one cart for the same user
-    * def loginResponse = call read('classpath:serverest/login/Login.feature@login-success')
-    * def token = loginResponse.authToken
+    * def loginPayload = read('classpath:serverest/login/resources/loginPayload.json')
+    Given path '/login'
+    And request loginPayload
+    When method POST
+    Then status 200
+    * def token = response.authorization
 
     # Create a product specifically for this user's cart
     * def productName = randomProductName()
@@ -224,8 +228,12 @@ Feature: Cart Management - ServeRest API
 
   @carts @regression
   Scenario: CT06 - Prevent cart creation when product stock is insufficient
-    * def loginResponse = call read('classpath:serverest/login/Login.feature@login-success')
-    * def token = loginResponse.authToken
+    * def loginPayload = read('classpath:serverest/login/resources/loginPayload.json')
+    Given path '/login'
+    And request loginPayload
+    When method POST
+    Then status 200
+    * def token = response.authorization
 
     Given path '/carrinhos/cancelar-compra'
     And header Authorization = token
