@@ -298,3 +298,96 @@ Feature: Cart Management - ServeRest API
     When method POST
     Then status 400
     And match response.message contains 'Produto não possui quantidade suficiente'
+
+
+  @carts @regression
+  Scenario: CT07 - Prevent cart creation with duplicated products in the same cart
+    * def loginPayload = read('classpath:serverest/login/resources/loginPayload.json')
+    Given path '/login'
+    And request loginPayload
+    When method POST
+    Then status 200
+    * def token = response.authorization
+
+    Given path '/carrinhos/cancelar-compra'
+    And header Authorization = token
+    When method DELETE
+    Then status 200
+
+    # Create a product to be used in the cart
+    * def productName = randomProductName()
+    * def productData =
+      """
+      {
+        "nome": "#(productName)",
+        "preco": 150,
+        "descricao": "Product created for duplicated products cart test",
+        "quantidade": 10
+      }
+      """
+
+    Given path '/produtos'
+    And header Authorization = token
+    And request productData
+    When method POST
+    Then status 201
+    * def productId = response._id
+
+    # Try to create a cart with duplicated products
+    * def duplicatedCartBody =
+      """
+      {
+        "produtos": [
+          {
+            "idProduto": "#(productId)",
+            "quantidade": 1
+          },
+          {
+            "idProduto": "#(productId)",
+            "quantidade": 1
+          }
+        ]
+      }
+      """
+
+    Given path '/carrinhos'
+    And header Authorization = token
+    And request duplicatedCartBody
+    When method POST
+    Then status 400
+    And match response.message contains 'Não é permitido possuir produto duplicado'
+
+
+  @carts @regression
+  Scenario: CT08 - Prevent cart creation with non-existing product
+    * def loginPayload = read('classpath:serverest/login/resources/loginPayload.json')
+    Given path '/login'
+    And request loginPayload
+    When method POST
+    Then status 200
+    * def token = response.authorization
+
+    Given path '/carrinhos/cancelar-compra'
+    And header Authorization = token
+    When method DELETE
+    Then status 200
+
+    # Try to create a cart with an invalid product ID
+    * def invalidCartBody =
+      """
+      {
+        "produtos": [
+          {
+            "idProduto": "AAAAAAAAAAAAAAAA",
+            "quantidade": 1
+          }
+        ]
+      }
+      """
+
+    Given path '/carrinhos'
+    And header Authorization = token
+    And request invalidCartBody
+    When method POST
+    Then status 400
+    And match response.message contains 'Produto não encontrado'

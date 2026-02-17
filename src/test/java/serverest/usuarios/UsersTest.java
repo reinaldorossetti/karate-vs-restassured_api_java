@@ -41,7 +41,7 @@ public class UsersTest {
     @Karate.Test
     Karate testValidations() {
         return Karate.run("Users")
-                .tags("@error-validation,@regex-validation")
+                .tags("@update-duplicate-email")
                 .relativeTo(getClass());
     }
 

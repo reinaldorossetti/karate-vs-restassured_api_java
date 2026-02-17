@@ -419,3 +419,67 @@ Feature: User Management - ServeRest API
     Then status 400
     And match response.message == 'Não é permitido excluir usuário com carrinho cadastrado'
     And match response.idCarrinho == '#string'
+
+
+  @get-by-id-not-found @regression
+  Scenario: CT15 - Get user by invalid ID should return 400
+    Given path '/usuarios/3F7K9P2XQ8M1R6TB'
+    When method GET
+    Then status 400
+    And match response.message == 'Usuário não encontrado'
+
+
+  @update-duplicate-email @regression
+  Scenario: CT16 - Prevent updating user with duplicate e-mail
+    * def email1 = randomEmail()
+    * def email2 = randomEmail()
+
+    * def user1 =
+      """
+      {
+        "nome": "User One",
+        "email": "#(email1)",
+        "password": "Senha123@",
+        "administrador": "false"
+      }
+      """
+
+    * def user2 =
+      """
+      {
+        "nome": "User Two",
+        "email": "#(email2)",
+        "password": "Senha456@",
+        "administrador": "true"
+      }
+      """
+
+    # Create first user
+    Given path '/usuarios'
+    And request user1
+    When method POST
+    Then status 201
+    * def userId1 = response._id
+
+    # Create second user with different e-mail
+    Given path '/usuarios'
+    And request user2
+    When method POST
+    Then status 201
+
+    # Try to update first user using second user's e-mail (duplicate)
+    * def updatePayload =
+      """
+      {
+        "nome": "User One Updated",
+        "email": "#(email2)",
+        "password": "Senha123@",
+        "administrador": "true"
+      }
+      """
+
+    Given path '/usuarios/' + userId1
+    And request updatePayload
+    When method PUT
+    Then status 400
+    And match response.message == 'Este email já está sendo usado'
