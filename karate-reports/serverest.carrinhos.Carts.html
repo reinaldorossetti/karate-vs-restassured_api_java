@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"8b9d5cba-4847-45b8-9c6d-cc1417381a66",karate_version:"1.5.2",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"b4da2d1e-9f9e-4614-9831-82c079d89bd4",karate_version:"1.5.2",karate_meta:null});
   }
 });
 </script>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-02-17 03:33:11 AM</div>
+    <div>2026-02-17 03:40:36 AM</div>
   </div>
 </div>
 
@@ -57,20 +57,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <div class="nav-item failed">
             <a href="#[1:13]"><span>[1:13]</span> <span>CT01 - Full cart lifecycle for authenticated user</span></a>
           </div>
-          <div class="nav-item passed">
+          <div class="nav-item failed">
             <a href="#[2:91]"><span>[2:91]</span> <span>CT02 - Cancel purchase and return products to stock</span></a>
           </div>
           <div class="nav-item passed">
             <a href="#[3:146]"><span>[3:146]</span> <span>CT03 - Prevent creating cart without authentication token</span></a>
           </div>
-          <div class="nav-item failed">
+          <div class="nav-item passed">
             <a href="#[4:167]"><span>[4:167]</span> <span>CT04 - Prevent creating more than one cart for the same user</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[5:219]"><span>[5:219]</span> <span>CT05 - Cart not found by ID</span></a>
+            <a href="#[5:223]"><span>[5:223]</span> <span>CT05 - Cart not found by ID</span></a>
           </div>
           <div class="nav-item failed">
-            <a href="#[6:226]"><span>[6:226]</span> <span>CT06 - Prevent cart creation when product stock is insufficient</span></a>
+            <a href="#[6:230]"><span>[6:230]</span> <span>CT06 - Prevent cart creation when product stock is insufficient</span></a>
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>1435</span>
+              <span>ms:</span>&nbsp;<span>1359</span>
             </div>
           </div>
           <div class="step-row">
@@ -147,7 +147,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def FakerUtils = Java.type(&#39;serverest.utils.FakerUtils&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">8</div>
+    <div class="time-cell passed">11</div>
   </div>
 
    
@@ -175,7 +175,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def randomProductName = function(){ return FakerUtils.randomProduct() }</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -203,7 +203,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">40</div>
+    <div class="time-cell passed">37</div>
   </div>
 
    
@@ -231,7 +231,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -287,7 +287,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request loginPayload</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -315,7 +315,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">930</div>
+    <div class="time-cell passed">744</div>
   </div>
 
    
@@ -324,7 +324,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.17">03:33:10.798 request:
+  <div class="preformatted" data-parent="0.17">03:40:35.254 request:
 1 &gt; POST https://serverest.dev/login
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 44
@@ -334,7 +334,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;email&quot;:&quot;fulano@qa.com&quot;,&quot;password&quot;:&quot;teste&quot;}
 
-03:33:11.231 response time in milliseconds: 433
+03:40:35.816 response time in milliseconds: 562
 1 &lt; 200
 1 &lt; access-control-allow-origin: *
 1 &lt; x-dns-prefetch-control: off
@@ -344,13 +344,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; x-content-type-options: nosniff
 1 &lt; x-xss-protection: 1; mode=block
 1 &lt; content-type: application/json; charset=utf-8
-1 &lt; x-cloud-trace-context: 23c40265699aa1f89170afa880b4202a
-1 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
+1 &lt; x-cloud-trace-context: 809292d79e86de2ea249bd75befccace
+1 &lt; date: Tue, 17 Feb 2026 03:40:35 GMT
 1 &lt; server: Google Frontend
 1 &lt; Content-Length: 265
 {
     &quot;message&quot;: &quot;Login realizado com sucesso&quot;,
-    &quot;authorization&quot;: &quot;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng&quot;
+    &quot;authorization&quot;: &quot;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0&quot;
 }
 
 </div>   
@@ -484,7 +484,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method DELETE</span>
       </div>
     </div>
-    <div class="time-cell passed">121</div>
+    <div class="time-cell passed">261</div>
   </div>
 
    
@@ -493,16 +493,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">03:33:11.241 request:
+  <div class="preformatted" data-parent="0.23">03:40:35.821 request:
 2 &gt; DELETE https://serverest.dev/carrinhos/cancelar-compra
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
 2 &gt; Host: serverest.dev
 2 &gt; Connection: Keep-Alive
 2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
 2 &gt; Accept-Encoding: gzip,deflate
 
 
-03:33:11.359 response time in milliseconds: 117
+03:40:36.080 response time in milliseconds: 257
 2 &lt; 200
 2 &lt; access-control-allow-origin: *
 2 &lt; x-dns-prefetch-control: off
@@ -512,8 +512,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &lt; x-content-type-options: nosniff
 2 &lt; x-xss-protection: 1; mode=block
 2 &lt; content-type: application/json; charset=utf-8
-2 &lt; x-cloud-trace-context: 1ab4bff764a481856b0fa0c96f9e49fa
-2 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
+2 &lt; x-cloud-trace-context: 06bc68fef7c652221229a0f4b5197483
+2 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
 2 &lt; server: Google Frontend
 2 &lt; Content-Length: 68
 {
@@ -574,7 +574,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def productName = randomProductName()</span>
       </div>
     </div>
-    <div class="time-cell passed">15</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -602,7 +602,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def productData =</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -719,7 +719,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">148</div>
+    <div class="time-cell passed">160</div>
   </div>
 
    
@@ -728,18 +728,18 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.41">03:33:11.380 request:
+  <div class="preformatted" data-parent="0.41">03:40:36.086 request:
 3 &gt; POST https://serverest.dev/produtos
-3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng
+3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
 3 &gt; Content-Type: application/json; charset=UTF-8
-3 &gt; Content-Length: 111
+3 &gt; Content-Length: 115
 3 &gt; Host: serverest.dev
 3 &gt; Connection: Keep-Alive
 3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
 3 &gt; Accept-Encoding: gzip,deflate
-{&quot;nome&quot;:&quot;Sleek Wooden Pants&quot;,&quot;preco&quot;:150,&quot;descricao&quot;:&quot;Product created for cart lifecycle test&quot;,&quot;quantidade&quot;:10}
+{&quot;nome&quot;:&quot;Enormous Bronze Wallet&quot;,&quot;preco&quot;:150,&quot;descricao&quot;:&quot;Product created for cart lifecycle test&quot;,&quot;quantidade&quot;:10}
 
-03:33:11.526 response time in milliseconds: 145
+03:40:36.242 response time in milliseconds: 151
 3 &lt; 201
 3 &lt; access-control-allow-origin: *
 3 &lt; x-dns-prefetch-control: off
@@ -749,13 +749,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 3 &lt; x-content-type-options: nosniff
 3 &lt; x-xss-protection: 1; mode=block
 3 &lt; content-type: application/json; charset=utf-8
-3 &lt; x-cloud-trace-context: 2166cdc0cceb1933dc6b3313275e6ad8
-3 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
+3 &lt; x-cloud-trace-context: c44b501fde97d36636d9cb67ba2dc194
+3 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
 3 &lt; server: Google Frontend
 3 &lt; Content-Length: 82
 {
     &quot;message&quot;: &quot;Cadastro realizado com sucesso&quot;,
-    &quot;_id&quot;: &quot;ltV8JTvFse1MBa8N&quot;
+    &quot;_id&quot;: &quot;rzUz1VMhb8zzALJj&quot;
 }
 
 </div>   
@@ -805,7 +805,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.message == &#39;Cadastro realizado com sucesso&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -833,7 +833,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def productId = response._id</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -987,7 +987,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">125</div>
+    <div class="time-cell passed">131</div>
   </div>
 
    
@@ -996,18 +996,18 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.62">03:33:11.536 request:
+  <div class="preformatted" data-parent="0.62">03:40:36.249 request:
 4 &gt; POST https://serverest.dev/carrinhos
-4 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng
+4 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
 4 &gt; Content-Type: application/json; charset=UTF-8
 4 &gt; Content-Length: 62
 4 &gt; Host: serverest.dev
 4 &gt; Connection: Keep-Alive
 4 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
 4 &gt; Accept-Encoding: gzip,deflate
-{&quot;produtos&quot;:[{&quot;idProduto&quot;:&quot;ltV8JTvFse1MBa8N&quot;,&quot;quantidade&quot;:2}]}
+{&quot;produtos&quot;:[{&quot;idProduto&quot;:&quot;rzUz1VMhb8zzALJj&quot;,&quot;quantidade&quot;:2}]}
 
-03:33:11.655 response time in milliseconds: 119
+03:40:36.378 response time in milliseconds: 129
 4 &lt; 400
 4 &lt; access-control-allow-origin: *
 4 &lt; x-dns-prefetch-control: off
@@ -1017,8 +1017,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 4 &lt; x-content-type-options: nosniff
 4 &lt; x-xss-protection: 1; mode=block
 4 &lt; content-type: application/json; charset=utf-8
-4 &lt; x-cloud-trace-context: 7de913f9051272ebe638e1cc83c42160
-4 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
+4 &lt; x-cloud-trace-context: df12fb4437d2c1140f647380c6d7a02f
+4 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
 4 &lt; server: Google Frontend
 4 &lt; Content-Length: 61
 {
@@ -1044,7 +1044,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Then</span>&nbsp;<span>status 201</span>
       </div>
     </div>
-    <div class="time-cell failed">25</div>
+    <div class="time-cell failed">0</div>
   </div>
 
    
@@ -1053,9 +1053,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.63">03:33:11.681 classpath:serverest/carrinhos/Carts.feature:63
+  <div class="preformatted" data-parent="0.63">03:40:36.379 classpath:serverest/carrinhos/Carts.feature:63
 Then status 201
-status code was: 400, expected: 201, response time in milliseconds: 119, url: https://serverest.dev/carrinhos, response: 
+status code was: 400, expected: 201, response time in milliseconds: 129, url: https://serverest.dev/carrinhos, response: 
 {
     &quot;message&quot;: &quot;Não é permitido ter mais de 1 carrinho&quot;
 }
@@ -1435,8 +1435,8 @@ classpath:serverest/carrinhos/Carts.feature:63
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1520</span>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>1321</span>
             </div>
           </div>
           <div class="step-row">
@@ -1459,7 +1459,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>url &#39;https://serverest.dev&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -1487,7 +1487,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def FakerUtils = Java.type(&#39;serverest.utils.FakerUtils&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -1543,7 +1543,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">41</div>
+    <div class="time-cell passed">42</div>
   </div>
 
    
@@ -1571,7 +1571,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1655,7 +1655,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">884</div>
+    <div class="time-cell passed">819</div>
   </div>
 
    
@@ -1664,7 +1664,7 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   
 
-  <div class="preformatted" data-parent="0.95">03:33:10.798 request:
+  <div class="preformatted" data-parent="0.95">03:40:35.253 request:
 1 &gt; POST https://serverest.dev/login
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 44
@@ -1674,7 +1674,7 @@ classpath:serverest/carrinhos/Carts.feature:63
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;email&quot;:&quot;fulano@qa.com&quot;,&quot;password&quot;:&quot;teste&quot;}
 
-03:33:11.190 response time in milliseconds: 388
+03:40:35.886 response time in milliseconds: 631
 1 &lt; 200
 1 &lt; access-control-allow-origin: *
 1 &lt; x-dns-prefetch-control: off
@@ -1684,13 +1684,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 1 &lt; x-content-type-options: nosniff
 1 &lt; x-xss-protection: 1; mode=block
 1 &lt; content-type: application/json; charset=utf-8
-1 &lt; x-cloud-trace-context: 7c1df8b5624982151261c3d923cd3f6c;o=1
-1 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
+1 &lt; x-cloud-trace-context: 2dd746461e5db8999b94670d03e7448f
+1 &lt; date: Tue, 17 Feb 2026 03:40:35 GMT
 1 &lt; server: Google Frontend
 1 &lt; Content-Length: 265
 {
     &quot;message&quot;: &quot;Login realizado com sucesso&quot;,
-    &quot;authorization&quot;: &quot;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng&quot;
+    &quot;authorization&quot;: &quot;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0&quot;
 }
 
 </div>   
@@ -1712,7 +1712,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1740,7 +1740,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def token = response.authorization</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -1775,7 +1775,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def productName = randomProductName()</span>
       </div>
     </div>
-    <div class="time-cell passed">177</div>
+    <div class="time-cell passed">102</div>
   </div>
 
    
@@ -1873,7 +1873,7 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   
 
-  <div class="preformatted" data-parent="0.112">03:33:11.378 [print] Using auth token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng 
+  <div class="preformatted" data-parent="0.112">03:40:35.997 [print] Using auth token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0 
 </div>   
 
   
@@ -1949,7 +1949,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">124</div>
+    <div class="time-cell passed">228</div>
   </div>
 
    
@@ -1958,18 +1958,18 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   
 
-  <div class="preformatted" data-parent="0.115">03:33:11.383 request:
+  <div class="preformatted" data-parent="0.115">03:40:35.999 request:
 2 &gt; POST https://serverest.dev/produtos
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
 2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 109
+2 &gt; Content-Length: 111
 2 &gt; Host: serverest.dev
 2 &gt; Connection: Keep-Alive
 2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;nome&quot;:&quot;Practical Plastic Wallet&quot;,&quot;preco&quot;:200,&quot;descricao&quot;:&quot;Product for cancel purchase test&quot;,&quot;quantidade&quot;:5}
+{&quot;nome&quot;:&quot;Synergistic Granite Wallet&quot;,&quot;preco&quot;:200,&quot;descricao&quot;:&quot;Product for cancel purchase test&quot;,&quot;quantidade&quot;:5}
 
-03:33:11.502 response time in milliseconds: 118
+03:40:36.225 response time in milliseconds: 224
 2 &lt; 201
 2 &lt; access-control-allow-origin: *
 2 &lt; x-dns-prefetch-control: off
@@ -1979,13 +1979,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 2 &lt; x-content-type-options: nosniff
 2 &lt; x-xss-protection: 1; mode=block
 2 &lt; content-type: application/json; charset=utf-8
-2 &lt; x-cloud-trace-context: 40ae986e1c3f92fb8c6646dfff7cf99c
-2 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
+2 &lt; x-cloud-trace-context: 5721673e5df75e92c80435eb4df7dcf0
+2 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
 2 &lt; server: Google Frontend
 2 &lt; Content-Length: 82
 {
     &quot;message&quot;: &quot;Cadastro realizado com sucesso&quot;,
-    &quot;_id&quot;: &quot;NWeeOBCLhLPREH8z&quot;
+    &quot;_id&quot;: &quot;ElJTAxqwGcpbKltf&quot;
 }
 
 </div>   
@@ -2035,7 +2035,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def productId = response._id</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -2189,7 +2189,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">123</div>
+    <div class="time-cell passed">103</div>
   </div>
 
    
@@ -2198,19 +2198,19 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   
 
-  <div class="preformatted" data-parent="0.135">03:33:11.508 request:
+  <div class="preformatted" data-parent="0.135">03:40:36.230 request:
 3 &gt; POST https://serverest.dev/carrinhos
-3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng
+3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
 3 &gt; Content-Type: application/json; charset=UTF-8
 3 &gt; Content-Length: 62
 3 &gt; Host: serverest.dev
 3 &gt; Connection: Keep-Alive
 3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
 3 &gt; Accept-Encoding: gzip,deflate
-{&quot;produtos&quot;:[{&quot;idProduto&quot;:&quot;NWeeOBCLhLPREH8z&quot;,&quot;quantidade&quot;:1}]}
+{&quot;produtos&quot;:[{&quot;idProduto&quot;:&quot;ElJTAxqwGcpbKltf&quot;,&quot;quantidade&quot;:1}]}
 
-03:33:11.629 response time in milliseconds: 120
-3 &lt; 201
+03:40:36.331 response time in milliseconds: 101
+3 &lt; 400
 3 &lt; access-control-allow-origin: *
 3 &lt; x-dns-prefetch-control: off
 3 &lt; x-frame-options: SAMEORIGIN
@@ -2219,13 +2219,12 @@ classpath:serverest/carrinhos/Carts.feature:63
 3 &lt; x-content-type-options: nosniff
 3 &lt; x-xss-protection: 1; mode=block
 3 &lt; content-type: application/json; charset=utf-8
-3 &lt; x-cloud-trace-context: 913b9a9ef92c89c90bf18ba00b08c345
-3 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
+3 &lt; x-cloud-trace-context: d777b1e2d1987172da7353885fe9faa9
+3 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
 3 &lt; server: Google Frontend
-3 &lt; Content-Length: 82
+3 &lt; Content-Length: 61
 {
-    &quot;message&quot;: &quot;Cadastro realizado com sucesso&quot;,
-    &quot;_id&quot;: &quot;r14RocVaf7WKgOFf&quot;
+    &quot;message&quot;: &quot;Não é permitido ter mais de 1 carrinho&quot;
 }
 
 </div>   
@@ -2241,13 +2240,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   <div class="step-row">
     <div class="step-container" id="0.136">
-      <div class="step-ref passed">136</div>
+      <div class="step-ref failed">136</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>Then</span>&nbsp;<span>status 201</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell failed">6</div>
   </div>
 
    
@@ -2256,7 +2255,14 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   
 
-     
+  <div class="preformatted" data-parent="0.136">03:40:36.338 classpath:serverest/carrinhos/Carts.feature:136
+Then status 201
+status code was: 400, expected: 201, response time in milliseconds: 101, url: https://serverest.dev/carrinhos, response: 
+{
+    &quot;message&quot;: &quot;Não é permitido ter mais de 1 carrinho&quot;
+}
+classpath:serverest/carrinhos/Carts.feature:136
+</div>   
 
   
 
@@ -2276,13 +2282,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   <div class="step-row">
     <div class="step-container" id="0.139">
-      <div class="step-ref passed">139</div>
+      <div class="step-ref skipped">139</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>Given</span>&nbsp;<span>path &#39;/carrinhos/cancelar-compra&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -2304,13 +2310,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   <div class="step-row">
     <div class="step-container" id="0.140">
-      <div class="step-ref passed">140</div>
+      <div class="step-ref skipped">140</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>header Authorization = token</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -2332,13 +2338,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   <div class="step-row">
     <div class="step-container" id="0.141">
-      <div class="step-ref passed">141</div>
+      <div class="step-ref skipped">141</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>When</span>&nbsp;<span>method DELETE</span>
       </div>
     </div>
-    <div class="time-cell passed">135</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -2347,34 +2353,7 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   
 
-  <div class="preformatted" data-parent="0.141">03:33:11.631 request:
-4 &gt; DELETE https://serverest.dev/carrinhos/cancelar-compra
-4 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5MTkxLCJleHAiOjE3NzEyOTk3OTF9.yhzJajf3COZmeW8Fu8i7XZo_LJ7vSEYRtifSZF9OAng
-4 &gt; Host: serverest.dev
-4 &gt; Connection: Keep-Alive
-4 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
-4 &gt; Accept-Encoding: gzip,deflate
-
-
-03:33:11.765 response time in milliseconds: 133
-4 &lt; 200
-4 &lt; access-control-allow-origin: *
-4 &lt; x-dns-prefetch-control: off
-4 &lt; x-frame-options: SAMEORIGIN
-4 &lt; strict-transport-security: max-age=15552000; includeSubDomains
-4 &lt; x-download-options: noopen
-4 &lt; x-content-type-options: nosniff
-4 &lt; x-xss-protection: 1; mode=block
-4 &lt; content-type: application/json; charset=utf-8
-4 &lt; x-cloud-trace-context: c0603a589294dc69813e4e86c51683bc
-4 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
-4 &lt; server: Google Frontend
-4 &lt; Content-Length: 86
-{
-    &quot;message&quot;: &quot;Registro excluído com sucesso. Estoque dos produtos reabastecido&quot;
-}
-
-</div>   
+     
 
   
 
@@ -2387,13 +2366,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   <div class="step-row">
     <div class="step-container" id="0.142">
-      <div class="step-ref passed">142</div>
+      <div class="step-ref skipped">142</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -2415,13 +2394,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   <div class="step-row">
     <div class="step-container" id="0.143">
-      <div class="step-ref passed">143</div>
+      <div class="step-ref skipped">143</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.message == &#39;#string&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -2450,7 +2429,7 @@ classpath:serverest/carrinhos/Carts.feature:63
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>985</span>
+              <span>ms:</span>&nbsp;<span>898</span>
             </div>
           </div>
           <div class="step-row">
@@ -2473,7 +2452,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>url &#39;https://serverest.dev&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -2501,7 +2480,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def FakerUtils = Java.type(&#39;serverest.utils.FakerUtils&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">5</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -2529,7 +2508,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def randomProductName = function(){ return FakerUtils.randomProduct() }</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2557,7 +2536,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">48</div>
+    <div class="time-cell passed">39</div>
   </div>
 
    
@@ -2655,7 +2634,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>And</span>&nbsp;<span>request cartBody</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2683,7 +2662,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">912</div>
+    <div class="time-cell passed">835</div>
   </div>
 
    
@@ -2692,7 +2671,7 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   
 
-  <div class="preformatted" data-parent="0.162">03:33:10.798 request:
+  <div class="preformatted" data-parent="0.162">03:40:35.253 request:
 1 &gt; POST https://serverest.dev/carrinhos
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 62
@@ -2702,7 +2681,7 @@ classpath:serverest/carrinhos/Carts.feature:63
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;produtos&quot;:[{&quot;idProduto&quot;:&quot;BeeJh5lz3k6kSIzA&quot;,&quot;quantidade&quot;:1}]}
 
-03:33:11.212 response time in milliseconds: 413
+03:40:35.900 response time in milliseconds: 645
 1 &lt; 401
 1 &lt; access-control-allow-origin: *
 1 &lt; x-dns-prefetch-control: off
@@ -2712,8 +2691,8 @@ classpath:serverest/carrinhos/Carts.feature:63
 1 &lt; x-content-type-options: nosniff
 1 &lt; x-xss-protection: 1; mode=block
 1 &lt; content-type: application/json; charset=utf-8
-1 &lt; x-cloud-trace-context: 76b6bc9893ac2542d883278f804506c2
-1 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
+1 &lt; x-cloud-trace-context: 8a6d67a1894182a2ad0ed2e6e319b01a
+1 &lt; date: Tue, 17 Feb 2026 03:40:35 GMT
 1 &lt; server: Google Frontend
 1 &lt; Content-Length: 103
 {
@@ -2767,7 +2746,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>And</span>&nbsp;<span>match response.message == &#39;Token de acesso ausente, inválido, expirado ou usuário do token não existe mais&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">16</div>
+    <div class="time-cell passed">13</div>
   </div>
 
    
@@ -2795,8 +2774,8 @@ classpath:serverest/carrinhos/Carts.feature:63
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>184</span>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1370</span>
             </div>
           </div>
           <div class="step-row">
@@ -2819,7 +2798,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>url &#39;https://serverest.dev&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2847,7 +2826,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def FakerUtils = Java.type(&#39;serverest.utils.FakerUtils&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">10</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -2903,7 +2882,7 @@ classpath:serverest/carrinhos/Carts.feature:63
         <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">45</div>
+    <div class="time-cell passed">37</div>
   </div>
 
    
@@ -2925,13 +2904,13 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   <div class="step-row">
     <div class="step-container" id="0.168">
-      <div class="step-ref failed">168</div>
+      <div class="step-ref passed">168</div>
       
-      <div class="step-cell failed">
-        <span>*</span>&nbsp;<span>def loginResponse = call read(&#39;classpath:serverest/login/Login.feature@login-success&#39;)</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell failed">125</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2940,21 +2919,7 @@ classpath:serverest/carrinhos/Carts.feature:63
 
   
 
-  <div class="preformatted" data-parent="0.168">03:33:10.430 classpath:serverest/carrinhos/Carts.feature:168
-* def loginResponse = call read(&#39;classpath:serverest/login/Login.feature@login-success&#39;)
-js failed:
-&gt;&gt;&gt;&gt;
-01: read(&#39;classpath:serverest/login/Login.feature@login-success&#39;)
-&lt;&lt;&lt;&lt;
-org.graalvm.polyglot.PolyglotException: not found: serverest/login/Login.feature
-- com.intuit.karate.resource.ResourceUtils.getResource(ResourceUtils.java:126)
-- com.intuit.karate.core.ScenarioFileReader.toResource(ScenarioFileReader.java:129)
-- com.intuit.karate.core.ScenarioFileReader.readFile(ScenarioFileReader.java:64)
-- com.intuit.karate.core.ScenarioEngine.lambda$new$0(ScenarioEngine.java:109)
-- &lt;js&gt;.:program(Unnamed:1)
-
-classpath:serverest/carrinhos/Carts.feature:168
-</div>   
+     
 
   
 
@@ -2967,13 +2932,154 @@ classpath:serverest/carrinhos/Carts.feature:168
 
   <div class="step-row">
     <div class="step-container" id="0.169">
-      <div class="step-ref skipped">169</div>
+      <div class="step-ref passed">169</div>
       
-      <div class="step-cell skipped">
-        <span>*</span>&nbsp;<span>def token = loginResponse.authToken</span>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/login&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.170">
+      <div class="step-ref passed">170</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request loginPayload</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.171">
+      <div class="step-ref passed">171</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">821</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.171">03:40:35.255 request:
+1 &gt; POST https://serverest.dev/login
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 44
+1 &gt; Host: serverest.dev
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;email&quot;:&quot;fulano@qa.com&quot;,&quot;password&quot;:&quot;teste&quot;}
+
+03:40:35.885 response time in milliseconds: 629
+1 &lt; 200
+1 &lt; access-control-allow-origin: *
+1 &lt; x-dns-prefetch-control: off
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+1 &lt; x-download-options: noopen
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-xss-protection: 1; mode=block
+1 &lt; content-type: application/json; charset=utf-8
+1 &lt; x-cloud-trace-context: a8b121e84e744589a89ac14050837e9d
+1 &lt; date: Tue, 17 Feb 2026 03:40:35 GMT
+1 &lt; server: Google Frontend
+1 &lt; Content-Length: 265
+{
+    &quot;message&quot;: &quot;Login realizado com sucesso&quot;,
+    &quot;authorization&quot;: &quot;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0&quot;
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.172">
+      <div class="step-ref passed">172</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.173">
+      <div class="step-ref passed">173</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def token = response.authorization</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -3001,14 +3107,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.172">
-      <div class="step-ref skipped">172</div>
+    <div class="step-container" id="0.176">
+      <div class="step-ref passed">176</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def productName = randomProductName()</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">100</div>
   </div>
 
    
@@ -3029,19 +3135,19 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.173">
-      <div class="step-ref skipped">173</div>
+    <div class="step-container" id="0.177">
+      <div class="step-ref passed">177</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def productData =</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
   
-  <div class="preformatted" data-parent="0.173">{
+  <div class="preformatted" data-parent="0.177">{
   &quot;nome&quot;: &quot;#(productName)&quot;,
   &quot;preco&quot;: 120,
   &quot;descricao&quot;: &quot;Product for multiple cart test&quot;,
@@ -3062,126 +3168,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.183">
-      <div class="step-ref skipped">183</div>
+    <div class="step-container" id="0.187">
+      <div class="step-ref passed">187</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/produtos&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.184">
-      <div class="step-ref skipped">184</div>
-      
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>header Authorization = token</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.185">
-      <div class="step-ref skipped">185</div>
-      
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>request productData</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.186">
-      <div class="step-ref skipped">186</div>
-      
-      <div class="step-cell skipped">
-        <span>When</span>&nbsp;<span>method POST</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.187">
-      <div class="step-ref skipped">187</div>
-      
-      <div class="step-cell skipped">
-        <span>Then</span>&nbsp;<span>status 201</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3203,13 +3197,155 @@ classpath:serverest/carrinhos/Carts.feature:168
 
   <div class="step-row">
     <div class="step-container" id="0.188">
-      <div class="step-ref skipped">188</div>
+      <div class="step-ref passed">188</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Authorization = token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.189">
+      <div class="step-ref passed">189</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request productData</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.190">
+      <div class="step-ref passed">190</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">192</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.190">03:40:35.993 request:
+2 &gt; POST https://serverest.dev/produtos
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 98
+2 &gt; Host: serverest.dev
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;nome&quot;:&quot;Rustic Wool Hat&quot;,&quot;preco&quot;:120,&quot;descricao&quot;:&quot;Product for multiple cart test&quot;,&quot;quantidade&quot;:3}
+
+03:40:36.183 response time in milliseconds: 189
+2 &lt; 201
+2 &lt; access-control-allow-origin: *
+2 &lt; x-dns-prefetch-control: off
+2 &lt; x-frame-options: SAMEORIGIN
+2 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+2 &lt; x-download-options: noopen
+2 &lt; x-content-type-options: nosniff
+2 &lt; x-xss-protection: 1; mode=block
+2 &lt; content-type: application/json; charset=utf-8
+2 &lt; x-cloud-trace-context: 9c2adc8ca2bcd5e94df45e9a23a32d9e
+2 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
+2 &lt; server: Google Frontend
+2 &lt; Content-Length: 82
+{
+    &quot;message&quot;: &quot;Cadastro realizado com sucesso&quot;,
+    &quot;_id&quot;: &quot;kQGDZCIsDuuEYR7H&quot;
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.191">
+      <div class="step-ref passed">191</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.192">
+      <div class="step-ref passed">192</div>
+      
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def productId = response._id</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -3237,19 +3373,19 @@ classpath:serverest/carrinhos/Carts.feature:168
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.191">
-      <div class="step-ref skipped">191</div>
+    <div class="step-container" id="0.195">
+      <div class="step-ref passed">195</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def firstCart =</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
   
-  <div class="preformatted" data-parent="0.191">{
+  <div class="preformatted" data-parent="0.195">{
   &quot;produtos&quot;: [
     {
       &quot;idProduto&quot;: &quot;#(productId)&quot;,
@@ -3272,14 +3408,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.203">
-      <div class="step-ref skipped">203</div>
+    <div class="step-container" id="0.207">
+      <div class="step-ref passed">207</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/carrinhos&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3300,14 +3436,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.204">
-      <div class="step-ref skipped">204</div>
+    <div class="step-container" id="0.208">
+      <div class="step-ref passed">208</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>header Authorization = token</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3328,14 +3464,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.205">
-      <div class="step-ref skipped">205</div>
+    <div class="step-container" id="0.209">
+      <div class="step-ref passed">209</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request firstCart</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3356,14 +3492,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.206">
-      <div class="step-ref skipped">206</div>
+    <div class="step-container" id="0.210">
+      <div class="step-ref passed">210</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">106</div>
   </div>
 
    
@@ -3372,7 +3508,37 @@ classpath:serverest/carrinhos/Carts.feature:168
 
   
 
-     
+  <div class="preformatted" data-parent="0.210">03:40:36.187 request:
+3 &gt; POST https://serverest.dev/carrinhos
+3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
+3 &gt; Content-Type: application/json; charset=UTF-8
+3 &gt; Content-Length: 62
+3 &gt; Host: serverest.dev
+3 &gt; Connection: Keep-Alive
+3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+3 &gt; Accept-Encoding: gzip,deflate
+{&quot;produtos&quot;:[{&quot;idProduto&quot;:&quot;kQGDZCIsDuuEYR7H&quot;,&quot;quantidade&quot;:1}]}
+
+03:40:36.292 response time in milliseconds: 104
+3 &lt; 201
+3 &lt; access-control-allow-origin: *
+3 &lt; x-dns-prefetch-control: off
+3 &lt; x-frame-options: SAMEORIGIN
+3 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+3 &lt; x-download-options: noopen
+3 &lt; x-content-type-options: nosniff
+3 &lt; x-xss-protection: 1; mode=block
+3 &lt; content-type: application/json; charset=utf-8
+3 &lt; x-cloud-trace-context: b68628f643af4532db0150cfd6abfd32
+3 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
+3 &lt; server: Google Frontend
+3 &lt; Content-Length: 82
+{
+    &quot;message&quot;: &quot;Cadastro realizado com sucesso&quot;,
+    &quot;_id&quot;: &quot;y9Q3k38Z9CsgQHsN&quot;
+}
+
+</div>   
 
   
 
@@ -3384,14 +3550,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.207">
-      <div class="step-ref skipped">207</div>
+    <div class="step-container" id="0.211">
+      <div class="step-ref passed">211</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 201</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3419,126 +3585,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.210">
-      <div class="step-ref skipped">210</div>
+    <div class="step-container" id="0.214">
+      <div class="step-ref passed">214</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def secondCart = firstCart</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.211">
-      <div class="step-ref skipped">211</div>
-      
-      <div class="step-cell skipped">
-        <span>Given</span>&nbsp;<span>path &#39;/carrinhos&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.212">
-      <div class="step-ref skipped">212</div>
-      
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>header Authorization = token</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.213">
-      <div class="step-ref skipped">213</div>
-      
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>request secondCart</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.214">
-      <div class="step-ref skipped">214</div>
-      
-      <div class="step-cell skipped">
-        <span>When</span>&nbsp;<span>method POST</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3560,13 +3614,13 @@ classpath:serverest/carrinhos/Carts.feature:168
 
   <div class="step-row">
     <div class="step-container" id="0.215">
-      <div class="step-ref skipped">215</div>
+      <div class="step-ref passed">215</div>
       
-      <div class="step-cell skipped">
-        <span>Then</span>&nbsp;<span>status 400</span>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/carrinhos&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3588,149 +3642,13 @@ classpath:serverest/carrinhos/Carts.feature:168
 
   <div class="step-row">
     <div class="step-container" id="0.216">
-      <div class="step-ref skipped">216</div>
-      
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>match response.message contains &#39;Não é permitido ter mais de 1 carrinho&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[5:219]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">carts</a><a class="badge badge-primary" href="karate-tags.html">regression</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[5:219]</span>
-                <span class="scenario-name">CT05 - Cart not found by ID</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1042</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[5:219]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[5:219]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.6">
-      <div class="step-ref bg-step">6</div>
+      <div class="step-ref passed">216</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url &#39;https://serverest.dev&#39;</span>
+        <span>And</span>&nbsp;<span>header Authorization = token</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:219]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.7">
-      <div class="step-ref bg-step">7</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def FakerUtils = Java.type(&#39;serverest.utils.FakerUtils&#39;)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">10</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:219]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.8">
-      <div class="step-ref bg-step">8</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def randomProductName = function(){ return FakerUtils.randomProduct() }</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:219]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.9">
-      <div class="step-ref bg-step">9</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">43</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3751,14 +3669,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.220">
-      <div class="step-ref passed">220</div>
+    <div class="step-container" id="0.217">
+      <div class="step-ref passed">217</div>
       
       <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/carrinhos/invalid-cart-id-123&#39;</span>
+        <span>And</span>&nbsp;<span>request secondCart</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3779,14 +3697,14 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.221">
-      <div class="step-ref passed">221</div>
+    <div class="step-container" id="0.218">
+      <div class="step-ref passed">218</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method GET</span>
+        <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">984</div>
+    <div class="time-cell passed">96</div>
   </div>
 
    
@@ -3795,30 +3713,33 @@ classpath:serverest/carrinhos/Carts.feature:168
 
   
 
-  <div class="preformatted" data-parent="0.221">03:33:10.657 request:
-1 &gt; GET https://serverest.dev/carrinhos/invalid-cart-id-123
-1 &gt; Host: serverest.dev
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
-1 &gt; Accept-Encoding: gzip,deflate
+  <div class="preformatted" data-parent="0.218">03:40:36.294 request:
+4 &gt; POST https://serverest.dev/carrinhos
+4 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
+4 &gt; Content-Type: application/json; charset=UTF-8
+4 &gt; Content-Length: 62
+4 &gt; Host: serverest.dev
+4 &gt; Connection: Keep-Alive
+4 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+4 &gt; Accept-Encoding: gzip,deflate
+{&quot;produtos&quot;:[{&quot;idProduto&quot;:&quot;kQGDZCIsDuuEYR7H&quot;,&quot;quantidade&quot;:1}]}
 
-
-03:33:11.283 response time in milliseconds: 625
-1 &lt; 400
-1 &lt; access-control-allow-origin: *
-1 &lt; x-dns-prefetch-control: off
-1 &lt; x-frame-options: SAMEORIGIN
-1 &lt; strict-transport-security: max-age=15552000; includeSubDomains
-1 &lt; x-download-options: noopen
-1 &lt; x-content-type-options: nosniff
-1 &lt; x-xss-protection: 1; mode=block
-1 &lt; content-type: application/json; charset=utf-8
-1 &lt; x-cloud-trace-context: 967453245da3d46e2c9eca23d972b733
-1 &lt; date: Tue, 17 Feb 2026 03:33:11 GMT
-1 &lt; server: Google Frontend
-1 &lt; Content-Length: 67
+03:40:36.389 response time in milliseconds: 93
+4 &lt; 400
+4 &lt; access-control-allow-origin: *
+4 &lt; x-dns-prefetch-control: off
+4 &lt; x-frame-options: SAMEORIGIN
+4 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+4 &lt; x-download-options: noopen
+4 &lt; x-content-type-options: nosniff
+4 &lt; x-xss-protection: 1; mode=block
+4 &lt; content-type: application/json; charset=utf-8
+4 &lt; x-cloud-trace-context: b98ba35bc6c052995aacfe1aa20a1988
+4 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
+4 &lt; server: Google Frontend
+4 &lt; Content-Length: 61
 {
-    &quot;id&quot;: &quot;id deve ter exatamente 16 caracteres alfanuméricos&quot;
+    &quot;message&quot;: &quot;Não é permitido ter mais de 1 carrinho&quot;
 }
 
 </div>   
@@ -3833,8 +3754,8 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.222">
-      <div class="step-ref passed">222</div>
+    <div class="step-container" id="0.219">
+      <div class="step-ref passed">219</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
@@ -3861,11 +3782,11 @@ classpath:serverest/carrinhos/Carts.feature:168
   
 
   <div class="step-row">
-    <div class="step-container" id="0.223">
-      <div class="step-ref passed">223</div>
+    <div class="step-container" id="0.220">
+      <div class="step-ref passed">220</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response == { id: &#39;id deve ter exatamente 16 caracteres alfanuméricos&#39; }</span>
+        <span>And</span>&nbsp;<span>match response.message contains &#39;Não é permitido ter mais de 1 carrinho&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
@@ -3885,29 +3806,29 @@ classpath:serverest/carrinhos/Carts.feature:168
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[6:226]">
+          <div class="scenario-heading" id="[5:223]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">carts</a><a class="badge badge-primary" href="karate-tags.html">regression</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[6:226]</span>
-                <span class="scenario-name">CT06 - Prevent cart creation when product stock is insufficient</span>
+                Scenario: <span>[5:223]</span>
+                <span class="scenario-name">CT05 - Cart not found by ID</span>
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>177</span>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>894</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[6:226]bg">
+            <div class="step-container" id="[5:223]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[6:226]bg"><div>
+          <div data-parent="[5:223]bg"><div>
   
 
   
@@ -3920,7 +3841,7 @@ classpath:serverest/carrinhos/Carts.feature:168
         <span>*</span>&nbsp;<span>url &#39;https://serverest.dev&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -3935,7 +3856,7 @@ classpath:serverest/carrinhos/Carts.feature:168
 
 </div>
 </div>
-          <div data-parent="[6:226]bg"><div>
+          <div data-parent="[5:223]bg"><div>
   
 
   
@@ -3946,6 +3867,34 @@ classpath:serverest/carrinhos/Carts.feature:168
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def FakerUtils = Java.type(&#39;serverest.utils.FakerUtils&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[5:223]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomProductName = function(){ return FakerUtils.randomProduct() }</span>
       </div>
     </div>
     <div class="time-cell passed">3</div>
@@ -3963,7 +3912,253 @@ classpath:serverest/carrinhos/Carts.feature:168
 
 </div>
 </div>
-          <div data-parent="[6:226]bg"><div>
+          <div data-parent="[5:223]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref bg-step">9</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">40</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.224">
+      <div class="step-ref passed">224</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/carrinhos/invalid-cart-id-123&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.225">
+      <div class="step-ref passed">225</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">823</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.225">03:40:35.254 request:
+1 &gt; GET https://serverest.dev/carrinhos/invalid-cart-id-123
+1 &gt; Host: serverest.dev
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+03:40:35.889 response time in milliseconds: 634
+1 &lt; 400
+1 &lt; access-control-allow-origin: *
+1 &lt; x-dns-prefetch-control: off
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+1 &lt; x-download-options: noopen
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-xss-protection: 1; mode=block
+1 &lt; content-type: application/json; charset=utf-8
+1 &lt; x-cloud-trace-context: 423f5e7baa5fac2bde28f1aaf52d5b65
+1 &lt; date: Tue, 17 Feb 2026 03:40:35 GMT
+1 &lt; server: Google Frontend
+1 &lt; Content-Length: 67
+{
+    &quot;id&quot;: &quot;id deve ter exatamente 16 caracteres alfanuméricos&quot;
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.226">
+      <div class="step-ref passed">226</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.227">
+      <div class="step-ref passed">227</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == { id: &#39;id deve ter exatamente 16 caracteres alfanuméricos&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">21</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6:230]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">carts</a><a class="badge badge-primary" href="karate-tags.html">regression</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6:230]</span>
+                <span class="scenario-name">CT06 - Prevent cart creation when product stock is insufficient</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>1300</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6:230]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6:230]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://serverest.dev&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:230]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def FakerUtils = Java.type(&#39;serverest.utils.FakerUtils&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[6:230]bg"><div>
   
 
   
@@ -3991,7 +4186,7 @@ classpath:serverest/carrinhos/Carts.feature:168
 
 </div>
 </div>
-          <div data-parent="[6:226]bg"><div>
+          <div data-parent="[6:230]bg"><div>
   
 
   
@@ -4004,105 +4199,7 @@ classpath:serverest/carrinhos/Carts.feature:168
         <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">44</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.227">
-      <div class="step-ref failed">227</div>
-      
-      <div class="step-cell failed">
-        <span>*</span>&nbsp;<span>def loginResponse = call read(&#39;classpath:serverest/login/Login.feature@login-success&#39;)</span>
-      </div>
-    </div>
-    <div class="time-cell failed">128</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.227">03:33:10.430 classpath:serverest/carrinhos/Carts.feature:227
-* def loginResponse = call read(&#39;classpath:serverest/login/Login.feature@login-success&#39;)
-js failed:
-&gt;&gt;&gt;&gt;
-01: read(&#39;classpath:serverest/login/Login.feature@login-success&#39;)
-&lt;&lt;&lt;&lt;
-org.graalvm.polyglot.PolyglotException: not found: serverest/login/Login.feature
-- com.intuit.karate.resource.ResourceUtils.getResource(ResourceUtils.java:126)
-- com.intuit.karate.core.ScenarioFileReader.toResource(ScenarioFileReader.java:129)
-- com.intuit.karate.core.ScenarioFileReader.readFile(ScenarioFileReader.java:64)
-- com.intuit.karate.core.ScenarioEngine.lambda$new$0(ScenarioEngine.java:109)
-- &lt;js&gt;.:program(Unnamed:1)
-
-classpath:serverest/carrinhos/Carts.feature:227
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.228">
-      <div class="step-ref skipped">228</div>
-      
-      <div class="step-cell skipped">
-        <span>*</span>&nbsp;<span>def token = loginResponse.authToken</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.230">
-      <div class="step-ref skipped">230</div>
-      
-      <div class="step-cell skipped">
-        <span>Given</span>&nbsp;<span>path &#39;/carrinhos/cancelar-compra&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">38</div>
   </div>
 
    
@@ -4124,13 +4221,13 @@ classpath:serverest/carrinhos/Carts.feature:227
 
   <div class="step-row">
     <div class="step-container" id="0.231">
-      <div class="step-ref skipped">231</div>
+      <div class="step-ref passed">231</div>
       
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>header Authorization = token</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def loginPayload = read(&#39;classpath:serverest/login/resources/loginPayload.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -4152,13 +4249,13 @@ classpath:serverest/carrinhos/Carts.feature:227
 
   <div class="step-row">
     <div class="step-container" id="0.232">
-      <div class="step-ref skipped">232</div>
+      <div class="step-ref passed">232</div>
       
-      <div class="step-cell skipped">
-        <span>When</span>&nbsp;<span>method DELETE</span>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/login&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">9</div>
   </div>
 
    
@@ -4180,13 +4277,265 @@ classpath:serverest/carrinhos/Carts.feature:227
 
   <div class="step-row">
     <div class="step-container" id="0.233">
-      <div class="step-ref skipped">233</div>
+      <div class="step-ref passed">233</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request loginPayload</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.234">
+      <div class="step-ref passed">234</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">734</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.234">03:40:35.253 request:
+1 &gt; POST https://serverest.dev/login
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 44
+1 &gt; Host: serverest.dev
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;email&quot;:&quot;fulano@qa.com&quot;,&quot;password&quot;:&quot;teste&quot;}
+
+03:40:35.804 response time in milliseconds: 547
+1 &lt; 200
+1 &lt; access-control-allow-origin: *
+1 &lt; x-dns-prefetch-control: off
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+1 &lt; x-download-options: noopen
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-xss-protection: 1; mode=block
+1 &lt; content-type: application/json; charset=utf-8
+1 &lt; x-cloud-trace-context: 8edf20caeda8bc4923a6cfe82de08651;o=1
+1 &lt; date: Tue, 17 Feb 2026 03:40:35 GMT
+1 &lt; server: Google Frontend
+1 &lt; Content-Length: 265
+{
+    &quot;message&quot;: &quot;Login realizado com sucesso&quot;,
+    &quot;authorization&quot;: &quot;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0&quot;
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.235">
+      <div class="step-ref passed">235</div>
+      
+      <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.236">
+      <div class="step-ref passed">236</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def token = response.authorization</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.238">
+      <div class="step-ref passed">238</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/carrinhos/cancelar-compra&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.239">
+      <div class="step-ref passed">239</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Authorization = token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.240">
+      <div class="step-ref passed">240</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method DELETE</span>
+      </div>
+    </div>
+    <div class="time-cell passed">191</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.240">03:40:35.814 request:
+2 &gt; DELETE https://serverest.dev/carrinhos/cancelar-compra
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
+2 &gt; Host: serverest.dev
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+03:40:36.004 response time in milliseconds: 188
+2 &lt; 200
+2 &lt; access-control-allow-origin: *
+2 &lt; x-dns-prefetch-control: off
+2 &lt; x-frame-options: SAMEORIGIN
+2 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+2 &lt; x-download-options: noopen
+2 &lt; x-content-type-options: nosniff
+2 &lt; x-xss-protection: 1; mode=block
+2 &lt; content-type: application/json; charset=utf-8
+2 &lt; x-cloud-trace-context: 818b52bd571cf796770bcba890803050
+2 &lt; date: Tue, 17 Feb 2026 03:40:35 GMT
+2 &lt; server: Google Frontend
+2 &lt; Content-Length: 68
+{
+    &quot;message&quot;: &quot;Não foi encontrado carrinho para esse usuário&quot;
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.241">
+      <div class="step-ref passed">241</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4214,14 +4563,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.236">
-      <div class="step-ref skipped">236</div>
+    <div class="step-container" id="0.244">
+      <div class="step-ref passed">244</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def productName = randomProductName()</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -4242,19 +4591,19 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.237">
-      <div class="step-ref skipped">237</div>
+    <div class="step-container" id="0.245">
+      <div class="step-ref passed">245</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def productData =</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
   
-  <div class="preformatted" data-parent="0.237">{
+  <div class="preformatted" data-parent="0.245">{
   &quot;nome&quot;: &quot;#(productName)&quot;,
   &quot;preco&quot;: 100,
   &quot;descricao&quot;: &quot;Low stock product for cart test&quot;,
@@ -4275,14 +4624,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.247">
-      <div class="step-ref skipped">247</div>
+    <div class="step-container" id="0.255">
+      <div class="step-ref passed">255</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/produtos&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4303,14 +4652,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.248">
-      <div class="step-ref skipped">248</div>
+    <div class="step-container" id="0.256">
+      <div class="step-ref passed">256</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>header Authorization = token</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4331,14 +4680,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.249">
-      <div class="step-ref skipped">249</div>
+    <div class="step-container" id="0.257">
+      <div class="step-ref passed">257</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request productData</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4359,14 +4708,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.250">
-      <div class="step-ref skipped">250</div>
+    <div class="step-container" id="0.258">
+      <div class="step-ref passed">258</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">231</div>
   </div>
 
    
@@ -4375,7 +4724,37 @@ classpath:serverest/carrinhos/Carts.feature:227
 
   
 
-     
+  <div class="preformatted" data-parent="0.258">03:40:36.008 request:
+3 &gt; POST https://serverest.dev/produtos
+3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
+3 &gt; Content-Type: application/json; charset=UTF-8
+3 &gt; Content-Length: 99
+3 &gt; Host: serverest.dev
+3 &gt; Connection: Keep-Alive
+3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+3 &gt; Accept-Encoding: gzip,deflate
+{&quot;nome&quot;:&quot;Rustic Iron Car&quot;,&quot;preco&quot;:100,&quot;descricao&quot;:&quot;Low stock product for cart test&quot;,&quot;quantidade&quot;:1}
+
+03:40:36.238 response time in milliseconds: 229
+3 &lt; 201
+3 &lt; access-control-allow-origin: *
+3 &lt; x-dns-prefetch-control: off
+3 &lt; x-frame-options: SAMEORIGIN
+3 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+3 &lt; x-download-options: noopen
+3 &lt; x-content-type-options: nosniff
+3 &lt; x-xss-protection: 1; mode=block
+3 &lt; content-type: application/json; charset=utf-8
+3 &lt; x-cloud-trace-context: a8fa4f24c0c9eeb96a66d4d666aeafa3
+3 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
+3 &lt; server: Google Frontend
+3 &lt; Content-Length: 82
+{
+    &quot;message&quot;: &quot;Cadastro realizado com sucesso&quot;,
+    &quot;_id&quot;: &quot;C2GafYxBaLT87p9v&quot;
+}
+
+</div>   
 
   
 
@@ -4387,14 +4766,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.251">
-      <div class="step-ref skipped">251</div>
+    <div class="step-container" id="0.259">
+      <div class="step-ref passed">259</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 201</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4415,14 +4794,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.252">
-      <div class="step-ref skipped">252</div>
+    <div class="step-container" id="0.260">
+      <div class="step-ref passed">260</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def productId = response._id</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -4450,19 +4829,19 @@ classpath:serverest/carrinhos/Carts.feature:227
   </div>
 
   <div class="step-row">
-    <div class="step-container" id="0.255">
-      <div class="step-ref skipped">255</div>
+    <div class="step-container" id="0.263">
+      <div class="step-ref passed">263</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def cartBody =</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
   
-  <div class="preformatted" data-parent="0.255">{
+  <div class="preformatted" data-parent="0.263">{
   &quot;produtos&quot;: [
     {
       &quot;idProduto&quot;: &quot;#(productId)&quot;,
@@ -4485,14 +4864,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.267">
-      <div class="step-ref skipped">267</div>
+    <div class="step-container" id="0.275">
+      <div class="step-ref passed">275</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/carrinhos&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4513,14 +4892,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.268">
-      <div class="step-ref skipped">268</div>
+    <div class="step-container" id="0.276">
+      <div class="step-ref passed">276</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>header Authorization = token</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4541,14 +4920,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.269">
-      <div class="step-ref skipped">269</div>
+    <div class="step-container" id="0.277">
+      <div class="step-ref passed">277</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request cartBody</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4569,14 +4948,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.270">
-      <div class="step-ref skipped">270</div>
+    <div class="step-container" id="0.278">
+      <div class="step-ref passed">278</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">77</div>
   </div>
 
    
@@ -4585,7 +4964,36 @@ classpath:serverest/carrinhos/Carts.feature:227
 
   
 
-     
+  <div class="preformatted" data-parent="0.278">03:40:36.244 request:
+4 &gt; POST https://serverest.dev/carrinhos
+4 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzcxMjk5NjM1LCJleHAiOjE3NzEzMDAyMzV9.uGJOsXVUGuPpqLAM10E66WJlRqKhzzSXd8PawHPsTe0
+4 &gt; Content-Type: application/json; charset=UTF-8
+4 &gt; Content-Length: 62
+4 &gt; Host: serverest.dev
+4 &gt; Connection: Keep-Alive
+4 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+4 &gt; Accept-Encoding: gzip,deflate
+{&quot;produtos&quot;:[{&quot;idProduto&quot;:&quot;C2GafYxBaLT87p9v&quot;,&quot;quantidade&quot;:2}]}
+
+03:40:36.317 response time in milliseconds: 73
+4 &lt; 400
+4 &lt; access-control-allow-origin: *
+4 &lt; x-dns-prefetch-control: off
+4 &lt; x-frame-options: SAMEORIGIN
+4 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+4 &lt; x-download-options: noopen
+4 &lt; x-content-type-options: nosniff
+4 &lt; x-xss-protection: 1; mode=block
+4 &lt; content-type: application/json; charset=utf-8
+4 &lt; x-cloud-trace-context: d304077a6d1afabb3e059a6bc054224c
+4 &lt; date: Tue, 17 Feb 2026 03:40:36 GMT
+4 &lt; server: Google Frontend
+4 &lt; Content-Length: 61
+{
+    &quot;message&quot;: &quot;Não é permitido ter mais de 1 carrinho&quot;
+}
+
+</div>   
 
   
 
@@ -4597,14 +5005,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.271">
-      <div class="step-ref skipped">271</div>
+    <div class="step-container" id="0.279">
+      <div class="step-ref passed">279</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4625,14 +5033,14 @@ classpath:serverest/carrinhos/Carts.feature:227
   
 
   <div class="step-row">
-    <div class="step-container" id="0.272">
-      <div class="step-ref skipped">272</div>
+    <div class="step-container" id="0.280">
+      <div class="step-ref failed">280</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell failed">
         <span>And</span>&nbsp;<span>match response.message contains &#39;Produto não possui quantidade suficiente&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell failed">1</div>
   </div>
 
    
@@ -4641,7 +5049,15 @@ classpath:serverest/carrinhos/Carts.feature:227
 
   
 
-     
+  <div class="preformatted" data-parent="0.280">03:40:36.323 classpath:serverest/carrinhos/Carts.feature:280
+And match response.message contains &#39;Produto não possui quantidade suficiente&#39;
+match failed: CONTAINS
+  $ | actual does not contain expected (STRING:STRING)
+  &#39;Não é permitido ter mais de 1 carrinho&#39;
+  &#39;Produto não possui quantidade suficiente&#39;
+
+classpath:serverest/carrinhos/Carts.feature:280
+</div>   
 
   
 
