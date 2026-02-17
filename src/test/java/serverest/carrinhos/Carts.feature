@@ -116,6 +116,12 @@ Feature: Cart Management - ServeRest API
     Then status 200
     * def token = response.authorization
     
+    # Ensure there is no existing cart for this user
+    Given path '/carrinhos/cancelar-compra'
+    And header Authorization = token
+    When method DELETE
+    Then status 200
+    
     # Create product for the cart
     * def productName = randomProductName()
     * def productData =
@@ -191,6 +197,12 @@ Feature: Cart Management - ServeRest API
     When method POST
     Then status 200
     * def token = response.authorization
+
+    # Ensure there is no existing cart for this user before creating the first cart
+    Given path '/carrinhos/cancelar-compra'
+    And header Authorization = token
+    When method DELETE
+    Then status 200
 
     # Create a product specifically for this user's cart
     * def productName = randomProductName()
