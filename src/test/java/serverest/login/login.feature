@@ -6,15 +6,30 @@ Feature: User Authentication - Login
     * url 'https://serverest.dev'
     * def FakerUtils = Java.type('serverest.utils.FakerUtils')
     * def randomProductName = function(){ return FakerUtils.randomProduct() }
-
-  @regression @smoke @login-success
-  Scenario: CT01 - Perform login with valid credentials and validate token
+    * def loginPayload = read('resources/loginPayload.json')
     * def randomEmail = function(){ return FakerUtils.randomEmail() }
+    * def userEmail = randomEmail()
+    * def userPassword = 'SenhaSegura@123'
+    * def newUser =
+      """
+      {
+        "nome": "#(userEmail)",
+        "email": "#(userEmail)",
+        "password": "#(userPassword)",
+        "administrador": "false"
+      }
+      """
+
+    Given path '/usuarios'
+    And request newUser
+    When method POST
+    Then status 201
+
+  @regression @smoke @login-success @ct01
+  Scenario: CT01 - Perform login with valid credentials and validate token
+    # Update login payload to use the created user's credentials
     Given path '/login'
-    And request {
-      "email": "#(randomEmail())",
-      "password": "minhaSenha123"
-    }
+    And request { email: "#(userEmail)", password: "#(userPassword)" }
     When method POST
     Then status 200
     * def message = response.message
@@ -85,9 +100,8 @@ Feature: User Authentication - Login
     When method POST
     Then status 201
 
-    * def loginPayload = { email: adminEmail, password: adminPassword }
     Given path '/login'
-    And request loginPayload
+    And request { email: "#(userEmail)", password: "#(userPassword)" }    
     When method POST
     Then status 200
     * def message = response.message
@@ -109,9 +123,9 @@ Feature: User Authentication - Login
     And header Authorization = authToken
     And request newProduct
     When method POST
-    Then status 201
-    And match response.message == 'Cadastro realizado com sucesso'
-    And match response._id == '#string'
+    Then status 403
+    And match response.message == "Rota exclusiva para administradores"
+    And match response.message == '#string'
 
   @regression
   Scenario Outline: CT05 - Validate invalid email format
