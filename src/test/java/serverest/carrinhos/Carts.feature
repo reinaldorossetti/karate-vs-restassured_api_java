@@ -8,12 +8,14 @@ Feature: Cart Management - ServeRest API
     * def randomProductName = function(){ return FakerUtils.randomProduct() }
     * def loginPayload = read('classpath:serverest/login/resources/loginPayload.json')
 
-    
   @carts @regression
   Scenario: CT01 - Full cart lifecycle for authenticated user
-    * def loginPayload = read('classpath:serverest/login/resources/loginPayload.json')
+    * def randomEmail = function(){ return FakerUtils.randomEmail() }
     Given path '/login'
-    And request loginPayload
+    And request {
+      "email": "#(randomEmail())",
+      "password": "minhaSenha123"
+    }
     When method POST
     Then status 200
     * def token = response.authorization
@@ -89,9 +91,12 @@ Feature: Cart Management - ServeRest API
 
   @carts @regression
   Scenario: CT02 - Cancel purchase and return products to stock
-    * def loginPayload = read('classpath:serverest/login/resources/loginPayload.json')
+    * def randomEmail = function(){ return FakerUtils.randomEmail() }
     Given path '/login'
-    And request loginPayload
+    And request {
+      "email": "#(randomEmail())",
+      "password": "minhaSenha123"
+    }
     When method POST
     Then status 200
     * def token = response.authorization

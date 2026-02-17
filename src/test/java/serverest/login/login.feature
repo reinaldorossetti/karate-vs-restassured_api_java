@@ -9,9 +9,12 @@ Feature: User Authentication - Login
 
   @regression @smoke @login-success
   Scenario: CT01 - Perform login with valid credentials and validate token
-    * def loginPayload = read('classpath:serverest/login/resources/loginPayload.json')
+    * def randomEmail = function(){ return FakerUtils.randomEmail() }
     Given path '/login'
-    And request loginPayload
+    And request {
+      "email": "#(randomEmail())",
+      "password": "minhaSenha123"
+    }
     When method POST
     Then status 200
     * def message = response.message
