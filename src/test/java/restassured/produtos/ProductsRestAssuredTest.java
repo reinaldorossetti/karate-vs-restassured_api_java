@@ -273,7 +273,7 @@ public class ProductsRestAssuredTest extends BaseApiTest {
 
     @DisplayName("CT08 - Validate required fields when creating a product")
     @ParameterizedTest(name = "CT08 - Validate required fields when creating a product")
-    @ValueSource(ints = {1, 2, 3, 4}) // six numbers
+    @ValueSource(ints = {1, 2, 3, 4})
     void ct08_validateRequiredFieldsWhenCreatingProduct(int numberField) {
         String token = getAdminToken();
         String payload = "";
