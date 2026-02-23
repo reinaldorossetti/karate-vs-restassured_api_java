@@ -73,8 +73,9 @@ public class LoginRestAssuredTest extends BaseApiTest {
             .body("authorization", nullValue());
     }
 
-    @Test
     @DisplayName("CT03 - Validate required fields on login")
+    @ParameterizedTest(name = "CT03 - Validate required fields on login")
+    @CsvFileSource(resources = "/restassured/login/invalido-login.csv", numLinesToSkip = 1)
     void ct03_validateRequiredFields() {
         // 1) Email vazio, senha preenchida
         givenWithAllure()

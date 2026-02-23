@@ -242,9 +242,9 @@ public class ProductsRestAssuredTest extends BaseApiTest {
         int minPrice = Collections.min(prices);
         double avgPrice = prices.stream().mapToInt(Integer::intValue).average().orElse(0);
 
-        System.out.println("Highest Price: " + maxPrice);
-        System.out.println("Lowest Price: " + minPrice);
-        System.out.println("Average Price: " + avgPrice);
+        // System.out.println("Highest Price: " + maxPrice);
+        // System.out.println("Lowest Price: " + minPrice);
+        // System.out.println("Average Price: " + avgPrice);
 
         for (Integer price : prices) {
             assertThat(price, greaterThan(0));
