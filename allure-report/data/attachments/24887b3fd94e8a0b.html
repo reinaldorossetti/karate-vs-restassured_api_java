@@ -1,0 +1,36 @@
+<div>POST to https://serverest.dev/carrinhos</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+    {
+    &quot;produtos&quot;: [
+        {
+            &quot;idProduto&quot;: &quot;VVZsBRtCwCiAAyio&quot;,
+            &quot;quantidade&quot;: 1
+        }
+    ]
+}
+    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcnQudXNlci4xNzcxODg3NjcwNTI0QGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiJTZW5oYVNlZ3VyYUAxMjMiLCJpYXQiOjE3NzE4ODc2NzEsImV4cCI6MTc3MTg4ODI3MX0.6-9n4xGVOYDHBw002ckw2CJOqGbNbZY6d-tWvxr60hs</div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://serverest.dev/carrinhos&#39; -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcnQudXNlci4xNzcxODg3NjcwNTI0QGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiJTZW5oYVNlZ3VyYUAxMjMiLCJpYXQiOjE3NzE4ODc2NzEsImV4cCI6MTc3MTg4ODI3MX0.6-9n4xGVOYDHBw002ckw2CJOqGbNbZY6d-tWvxr60hs&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;produtos&quot;: [
+        {
+            &quot;idProduto&quot;: &quot;VVZsBRtCwCiAAyio&quot;,
+            &quot;quantidade&quot;: 1
+        }
+    ]
+}&#39;
+</div>
