@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -34,7 +35,7 @@ import restassured.BaseApiTest;
 public class ProductsRestAssuredTest extends BaseApiTest {
 
     private String getAdminToken() {
-        String email = "admin." + System.currentTimeMillis() + "@example.com";
+        String email = "admin." + UUID.randomUUID() + "@example.com";
         String password = "SenhaSegura@123";
 
         String userPayload = String.format("{\n  \"nome\": \"Admin User\",\n  \"email\": \"%s\",\n  \"password\": \"%s\",\n  \"administrador\": \"true\"\n}",
@@ -327,9 +328,9 @@ public class ProductsRestAssuredTest extends BaseApiTest {
             .filter(p -> ((Number) p.get("preco")).doubleValue() >= 500)
             .toList();
 
-        System.out.println("Cheap Products: " + cheapProducts.size());
-        System.out.println("Medium Products: " + mediumProducts.size());
-        System.out.println("Expensive Products: " + expensiveProducts.size());
+        // System.out.println("Cheap Products: " + cheapProducts.size());
+        // System.out.println("Medium Products: " + mediumProducts.size());
+        // System.out.println("Expensive Products: " + expensiveProducts.size());
 
         assertThat(cheapProducts, notNullValue());
         assertThat(mediumProducts, notNullValue());

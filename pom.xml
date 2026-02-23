@@ -136,12 +136,19 @@
                 <version>3.2.5</version>
                 <configuration>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
-                    <parallel>methods</parallel>
+                    <parallel>per_class</parallel>
                     <threadCount>6</threadCount>
                     <perCoreThreadCount>true</perCoreThreadCount>
                     <forkCount>1C</forkCount>
                     <reuseForks>true</reuseForks>
-
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.execution.parallel.enabled=true
+                            junit.jupiter.execution.parallel.config.strategy=dynamic
+                            junit.jupiter.execution.parallel.mode.default=same_thread
+                            junit.jupiter.execution.parallel.mode.classes.default=concurrent
+                        </configurationParameters>
+                    </properties>
                     <!-- opcional: diretório do allure-results -->
                     <systemPropertyVariables>
                         <allure.results.directory>
