@@ -1,0 +1,5 @@
+nome,preco,descricao,quantidade,reason
+"",100,Desc,10,Empty name
+"Product Test",-10,Desc,10,Negative price
+"Product Test",100,"",10,Empty description
+"Product Test",100,Desc,-5,Negative quantity

@@ -1,0 +1,511 @@
+package playwright_serverest.produtos;
+
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import com.microsoft.playwright.APIResponse;
+import com.microsoft.playwright.options.RequestOptions;
+
+import playwright_serverest.BaseApiTest;
+
+@TestInstance(Lifecycle.PER_CLASS)
+@Execution(ExecutionMode.CONCURRENT)
+public class ProductsPlaywrightTest extends BaseApiTest {
+
+    private String getAdminToken() throws Exception {
+        String email = "admin." + UUID.randomUUID() + "@example.com";
+        String password = "SenhaSegura@123";
+
+        String userPayload = String.format("""
+                {
+                  "nome": "Admin User",
+                  "email": "%s",
+                  "password": "%s",
+                  "administrador": "true"
+                }""", email, password);
+
+        request.post("/usuarios", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setData(userPayload));
+
+        String loginBody = String.format("{\"email\": \"%s\", \"password\": \"%s\"}", email, password);
+        APIResponse loginResp = request.post("/login", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setData(loginBody));
+        assertEquals(200, loginResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> loginBody2 = objectMapper.readValue(loginResp.body(), Map.class);
+        return (String) loginBody2.get("authorization");
+    }
+
+    @Test
+    @DisplayName("CT01 - List all products and validate JSON structure")
+    void ct01_listProducts() throws Exception {
+        APIResponse resp = request.get("/produtos");
+        assertEquals(200, resp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> body = objectMapper.readValue(resp.body(), Map.class);
+        int quantidade = (int) body.get("quantidade");
+        @SuppressWarnings("unchecked")
+        List<Map<String, Object>> produtos = (List<Map<String, Object>>) body.get("produtos");
+
+        assertTrue(quantidade >= 0);
+        assertNotNull(produtos);
+
+        for (Map<String, Object> product : produtos) {
+            assertTrue(product.containsKey("nome"));
+            assertTrue(product.containsKey("preco"));
+            assertTrue(product.containsKey("descricao"));
+            assertTrue(product.containsKey("quantidade"));
+            assertTrue(product.containsKey("_id"));
+        }
+    }
+
+    @Test
+    @DisplayName("CT02 - Create a new product as an administrator")
+    void ct02_createProductAsAdmin() throws Exception {
+        String token = getAdminToken();
+        String productName = "Product " + System.currentTimeMillis();
+
+        String productPayload = String.format("""
+                {
+                  "nome": "%s",
+                  "preco": 250,
+                  "descricao": "Automated test product",
+                  "quantidade": 100
+                }""", productName);
+
+        APIResponse createResp = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", token)
+                .setData(productPayload));
+
+        assertEquals(201, createResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> createBody = objectMapper.readValue(createResp.body(), Map.class);
+        assertEquals("Cadastro realizado com sucesso", createBody.get("message"));
+        assertNotNull(createBody.get("_id"));
+
+        String productId = (String) createBody.get("_id");
+
+        APIResponse getResp = request.get("/produtos/" + productId);
+        assertEquals(200, getResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> product = objectMapper.readValue(getResp.body(), Map.class);
+        assertEquals(productName, product.get("nome"));
+        assertEquals(250, product.get("preco"));
+        assertEquals(100, product.get("quantidade"));
+    }
+
+    @Test
+    @DisplayName("CT03 - Validate error when creating a product with a duplicate name")
+    void ct03_duplicateProductName() throws Exception {
+        String token = getAdminToken();
+        String name = "Duplicate Product Test " + System.currentTimeMillis();
+
+        String productPayload = String.format("""
+                {
+                  "nome": "%s",
+                  "preco": 150,
+                  "descricao": "First product",
+                  "quantidade": 50
+                }""", name);
+
+        APIResponse first = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", token)
+                .setData(productPayload));
+        assertEquals(201, first.status());
+
+        APIResponse second = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", token)
+                .setData(productPayload));
+        assertEquals(400, second.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> secondBody = objectMapper.readValue(second.body(), Map.class);
+        assertEquals("Já existe produto com esse nome", secondBody.get("message"));
+    }
+
+    @Test
+    @DisplayName("CT04 - Search for products using query parameters")
+    void ct04_searchForProductsWithFilters() throws Exception {
+        APIResponse resp = request.get("/produtos?nome=Logitech");
+        assertEquals(200, resp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> body = objectMapper.readValue(resp.body(), Map.class);
+        @SuppressWarnings("unchecked")
+        List<Map<String, Object>> produtos = (List<Map<String, Object>>) body.get("produtos");
+        if (produtos != null && !produtos.isEmpty()) {
+            for (Map<String, Object> p : produtos) {
+                assertTrue(((String) p.get("nome")).contains("Logitech"),
+                        "Product name should contain 'Logitech'");
+            }
+        }
+
+        APIResponse priceResp = request.get("/produtos?preco=100");
+        assertEquals(200, priceResp.status());
+    }
+
+    @Test
+    @DisplayName("CT05 - Update information of an existing product")
+    void ct05_updateExistingProduct() throws Exception {
+        String token = getAdminToken();
+        String productName = "Product " + System.currentTimeMillis();
+
+        String initialProduct = String.format("""
+                {
+                  "nome": "%s",
+                  "preco": 100,
+                  "descricao": "Original description",
+                  "quantidade": 50
+                }""", productName);
+
+        APIResponse createResp = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", token)
+                .setData(initialProduct));
+        assertEquals(201, createResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> createBody = objectMapper.readValue(createResp.body(), Map.class);
+        String productId = (String) createBody.get("_id");
+
+        String updatedProduct = String.format("""
+                {
+                  "nome": "%s",
+                  "preco": 200,
+                  "descricao": "Updated description",
+                  "quantidade": 75
+                }""", productName);
+
+        APIResponse updateResp = request.put("/produtos/" + productId, RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", token)
+                .setData(updatedProduct));
+        assertEquals(200, updateResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> updateBody = objectMapper.readValue(updateResp.body(), Map.class);
+        assertEquals("Registro alterado com sucesso", updateBody.get("message"));
+
+        APIResponse getResp = request.get("/produtos/" + productId);
+        assertEquals(200, getResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> product = objectMapper.readValue(getResp.body(), Map.class);
+        assertEquals(200, product.get("preco"));
+        assertEquals("Updated description", product.get("descricao"));
+        assertEquals(75, product.get("quantidade"));
+    }
+
+    @Test
+    @DisplayName("CT06 - Validate price calculations and comparisons")
+    void ct06_validatePriceCalculationsAndComparisons() throws Exception {
+        APIResponse resp = request.get("/produtos");
+        assertEquals(200, resp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> body = objectMapper.readValue(resp.body(), Map.class);
+        @SuppressWarnings("unchecked")
+        List<Map<String, Object>> produtos = (List<Map<String, Object>>) body.get("produtos");
+
+        if (produtos == null || produtos.isEmpty()) {
+            return;
+        }
+
+        List<Number> prices = produtos.stream()
+                .map(p -> (Number) p.get("preco"))
+                .toList();
+
+        double maxPrice = prices.stream().mapToDouble(Number::doubleValue).max().orElse(0);
+        double minPrice = prices.stream().mapToDouble(Number::doubleValue).min().orElse(0);
+
+        for (Number price : prices) {
+            assertTrue(price.doubleValue() > 0, "Price should be greater than 0");
+            assertTrue(price.doubleValue() < 100000, "Price should be less than 100000");
+        }
+
+        assertTrue(maxPrice >= minPrice, "Max price should be >= min price");
+    }
+
+    @Test
+    @DisplayName("CT07 - Attempt to create a product without an authentication token")
+    void ct07_createProductWithoutToken() throws Exception {
+        String productPayload = """
+                {
+                  "nome": "Product Without Auth",
+                  "preco": 100,
+                  "descricao": "Test",
+                  "quantidade": 10
+                }""";
+
+        APIResponse resp = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setData(productPayload));
+
+        assertEquals(401, resp.status());
+        @SuppressWarnings("unchecked")
+        Map<String, Object> body = objectMapper.readValue(resp.body(), Map.class);
+        assertEquals("Token de acesso ausente, inválido, expirado ou usuário do token não existe mais",
+                body.get("message"));
+    }
+
+    @DisplayName("CT08 - Validate required fields when creating a product")
+    @ParameterizedTest(name = "CT08 - Validate required fields when creating a product")
+    @ValueSource(ints = {1, 2, 3, 4})
+    void ct08_validateRequiredFieldsWhenCreatingProduct(int numberField) throws Exception {
+        String token = getAdminToken();
+        String payload = switch (numberField) {
+            case 1 -> "{\"preco\": 0.55, \"descricao\": \"Test without name\", \"quantidade\": 10}";
+            case 2 -> "{\"nome\": \"Product Without Description\", \"descricao\": \"\", \"quantidade\": 10}";
+            case 3 -> "{\"nome\": \"Product Without Quantity\", \"preco\": 100, \"quantidade\": -1}";
+            case 4 -> "{\"nome\": \"null\", \"preco\": 1.99, \"descricao\": \"null\"}";
+            default -> throw new IllegalArgumentException("Unknown field: " + numberField);
+        };
+
+        APIResponse resp = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", token)
+                .setData(payload));
+
+        assertEquals(400, resp.status());
+    }
+
+    @Test
+    @DisplayName("CT09 - Work with complex JSON data")
+    void ct09_workWithComplexJsonData() throws Exception {
+        APIResponse resp = request.get("/produtos");
+        assertEquals(200, resp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> body = objectMapper.readValue(resp.body(), Map.class);
+        @SuppressWarnings("unchecked")
+        List<Map<String, Object>> produtos = (List<Map<String, Object>>) body.get("produtos");
+
+        if (produtos == null) {
+            return;
+        }
+
+        List<Map<String, Object>> cheapProducts = produtos.stream()
+                .filter(p -> ((Number) p.get("preco")).doubleValue() < 100)
+                .toList();
+        List<Map<String, Object>> mediumProducts = produtos.stream()
+                .filter(p -> {
+                    double price = ((Number) p.get("preco")).doubleValue();
+                    return price >= 100 && price < 500;
+                })
+                .toList();
+        List<Map<String, Object>> expensiveProducts = produtos.stream()
+                .filter(p -> ((Number) p.get("preco")).doubleValue() >= 500)
+                .toList();
+
+        assertNotNull(cheapProducts);
+        assertNotNull(mediumProducts);
+        assertNotNull(expensiveProducts);
+    }
+
+    @Test
+    @DisplayName("CT10 - Delete an existing product")
+    void ct10_deleteExistingProduct() throws Exception {
+        String token = getAdminToken();
+        String productName = "Product " + System.currentTimeMillis();
+
+        String productPayload = String.format("""
+                {
+                  "nome": "%s",
+                  "preco": 100,
+                  "descricao": "Product to delete",
+                  "quantidade": 10
+                }""", productName);
+
+        APIResponse createResp = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", token)
+                .setData(productPayload));
+        assertEquals(201, createResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> createBody = objectMapper.readValue(createResp.body(), Map.class);
+        String productId = (String) createBody.get("_id");
+
+        APIResponse deleteResp = request.delete("/produtos/" + productId, RequestOptions.create()
+                .setHeader("Authorization", token));
+        assertEquals(200, deleteResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> deleteBody = objectMapper.readValue(deleteResp.body(), Map.class);
+        assertEquals("Registro excluído com sucesso", deleteBody.get("message"));
+
+        APIResponse getResp = request.get("/produtos/" + productId);
+        assertEquals(400, getResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> getBody = objectMapper.readValue(getResp.body(), Map.class);
+        assertEquals("Produto não encontrado", getBody.get("message"));
+    }
+
+    @Test
+    @DisplayName("CT11 - Create a product from fixed JSON payload")
+    void ct11_createProductFromFixedJsonPayload() throws Exception {
+        String token = getAdminToken();
+
+        Map<String, Object> productPayload = loadJsonResource("serverest/produtos/resources/productPayload.json");
+        productPayload.put("nome", "Product " + System.currentTimeMillis());
+
+        APIResponse resp = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", token)
+                .setData(objectMapper.writeValueAsString(productPayload)));
+
+        assertEquals(201, resp.status());
+        @SuppressWarnings("unchecked")
+        Map<String, Object> body = objectMapper.readValue(resp.body(), Map.class);
+        assertEquals("Cadastro realizado com sucesso", body.get("message"));
+        assertNotNull(body.get("_id"));
+    }
+
+    @Test
+    @DisplayName("CT12 - Prevent deleting a product that is part of a cart")
+    void ct12_preventDeletingProductInCart() throws Exception {
+        String adminToken = getAdminToken();
+
+        String productName = "Product " + System.currentTimeMillis();
+        String productPayload = String.format("""
+                {
+                  "nome": "%s",
+                  "preco": 300,
+                  "descricao": "Product linked to cart",
+                  "quantidade": 10
+                }""", productName);
+
+        APIResponse createProductResp = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", adminToken)
+                .setData(productPayload));
+        assertEquals(201, createProductResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> createProductBody = objectMapper.readValue(createProductResp.body(), Map.class);
+        String productId = (String) createProductBody.get("_id");
+
+        // Create non-admin user and login
+        String userEmail = "cart.user." + System.currentTimeMillis() + "@example.com";
+        String userPassword = "SenhaSegura@123";
+
+        String userData = String.format("""
+                {
+                  "nome": "Cart User",
+                  "email": "%s",
+                  "password": "%s",
+                  "administrador": "false"
+                }""", userEmail, userPassword);
+
+        request.post("/usuarios", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setData(userData));
+
+        String loginPayload = String.format("{\"email\": \"%s\", \"password\": \"%s\"}", userEmail, userPassword);
+        APIResponse loginResp = request.post("/login", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setData(loginPayload));
+        assertEquals(200, loginResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> loginBody = objectMapper.readValue(loginResp.body(), Map.class);
+        String userToken = (String) loginBody.get("authorization");
+
+        // Cancel any existing cart
+        request.delete("/carrinhos/cancelar-compra", RequestOptions.create()
+                .setHeader("Authorization", userToken));
+
+        // Create cart with the product
+        String cartBody = String.format("""
+                {
+                  "produtos": [{"idProduto": "%s", "quantidade": 1}]
+                }""", productId);
+        APIResponse cartResp = request.post("/carrinhos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", userToken)
+                .setData(cartBody));
+        assertEquals(201, cartResp.status());
+
+        // Try to delete product that is in a cart
+        APIResponse deleteResp = request.delete("/produtos/" + productId, RequestOptions.create()
+                .setHeader("Authorization", adminToken));
+        assertEquals(400, deleteResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> deleteBody = objectMapper.readValue(deleteResp.body(), Map.class);
+        assertEquals("Não é permitido excluir produto que faz parte de carrinho", deleteBody.get("message"));
+    }
+
+    @Test
+    @DisplayName("CT13 - Restrict product creation to administrators only")
+    void ct13_restrictProductCreationToAdmins() throws Exception {
+        // Create non-admin user
+        String userEmail = "non.admin." + System.currentTimeMillis() + "@example.com";
+        String userPassword = "SenhaSegura@123";
+
+        String userData = String.format("""
+                {
+                  "nome": "Non Admin User",
+                  "email": "%s",
+                  "password": "%s",
+                  "administrador": "false"
+                }""", userEmail, userPassword);
+
+        request.post("/usuarios", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setData(userData));
+
+        // Login as non-admin
+        String loginPayload = String.format("{\"email\": \"%s\", \"password\": \"%s\"}", userEmail, userPassword);
+        APIResponse loginResp = request.post("/login", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setData(loginPayload));
+        assertEquals(200, loginResp.status());
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> loginBody = objectMapper.readValue(loginResp.body(), Map.class);
+        String nonAdminToken = (String) loginBody.get("authorization");
+
+        // Try to create product with non-admin token
+        String productData = """
+                {
+                  "nome": "Restricted Product",
+                  "preco": 500,
+                  "descricao": "Product should be created only by admins",
+                  "quantidade": 5
+                }""";
+
+        APIResponse productResp = request.post("/produtos", RequestOptions.create()
+                .setHeader("Content-Type", "application/json")
+                .setHeader("Authorization", nonAdminToken)
+                .setData(productData));
+
+        assertEquals(403, productResp.status());
+        @SuppressWarnings("unchecked")
+        Map<String, Object> productBody = objectMapper.readValue(productResp.body(), Map.class);
+        assertEquals("Rota exclusiva para administradores", productBody.get("message"));
+    }
+}
