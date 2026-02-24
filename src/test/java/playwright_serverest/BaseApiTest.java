@@ -76,6 +76,7 @@ public abstract class BaseApiTest {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public Map<String, Object> parseResponseBody(APIResponse response) throws Exception {
         return objectMapper.readValue(response.body(), Map.class);
     }

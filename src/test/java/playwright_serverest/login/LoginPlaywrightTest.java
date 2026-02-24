@@ -20,7 +20,6 @@ import com.microsoft.playwright.options.RequestOptions;
 import playwright_serverest.BaseApiTest;
 import playwright_serverest.utils.FakerUtils;
 
-@SuppressWarnings("unchecked")
 @TestInstance(Lifecycle.PER_CLASS)
 @Execution(ExecutionMode.CONCURRENT)
 public class LoginPlaywrightTest extends BaseApiTest {
@@ -84,7 +83,7 @@ public class LoginPlaywrightTest extends BaseApiTest {
 
     @DisplayName("CT03 - Validate required fields on login")
     @ParameterizedTest(name = "CT03 - Validate required fields on login")
-    @CsvFileSource(resources = "/playwright/login/invalido-login.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/playwright_serverest/login/invalido-login.csv", numLinesToSkip = 1)
     void ct03_validateRequiredFields() throws Exception {
         // 1) Empty email, filled password
         APIResponse resp1 = request.post("/login", RequestOptions.create()
@@ -153,7 +152,7 @@ public class LoginPlaywrightTest extends BaseApiTest {
     }
 
     @ParameterizedTest(name = "CT05 - Validate invalid email format: {0}")
-    @CsvFileSource(resources = "/playwright/login/invalid-login-emails.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/playwright_serverest/login/invalid-login-emails.csv", numLinesToSkip = 1)
     @Execution(ExecutionMode.CONCURRENT)
     @DisplayName("CT05 - Validate invalid email format")
     void ct05_validateInvalidEmailFormat(String invalidEmail) throws Exception {

@@ -186,28 +186,22 @@ mvn test
 
 ## ▶️ Executando os Testes
 
-### Executar todos os testes do módulo Playwright
-
-```bash
-mvn clean test -Dtest=playwright_serverest.**.*Test
-```
-
 ### Executar suíte completa Playwright
 
 ```bash
-mvn -Dtest=playwright_serverest.ExecutionBuilderRunner test
+mvn clean -Dtest=playwright_serverest.ExecutionBuilderRunner test
 ```
 
 ### Executar suíte de login
 
 ```bash
-mvn -Dtest=playwright_serverest.login.LoginPlaywrightTest test
+mvn clean -Dtest=playwright_serverest.login.LoginPlaywrightTest test
 ```
 
 ### Executar método específico
 
 ```bash
-mvn -Dtest=playwright_serverest.login.LoginPlaywrightTest#ct01_loginWithValidCredentials test
+mvn clean -Dtest=playwright_serverest.login.LoginPlaywrightTest#ct01_loginWithValidCredentials test
 ```
 
 ### Execução paralela (JUnit 5)

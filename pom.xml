@@ -20,7 +20,7 @@
         <!-- ✅ alinhar JUnit 5 + Platform -->
         <junit5.version>5.10.1</junit5.version>
         <junit.platform.version>1.10.1</junit.platform.version>
-        <playwright.version>1.49.0</playwright.version>
+        <playwright.version>1.58.0</playwright.version>
 
         <allure.version>2.17.0</allure.version>
     </properties>
@@ -83,7 +83,7 @@
             <groupId>com.microsoft.playwright</groupId>
             <artifactId>playwright</artifactId>
             <version>${playwright.version}</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
         <!-- Source: https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>

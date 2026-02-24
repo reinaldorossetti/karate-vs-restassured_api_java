@@ -1,6 +1,5 @@
 package playwright_serverest;
 
-import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 import org.junit.platform.suite.api.SuiteDisplayName;
@@ -20,7 +19,5 @@ import org.junit.platform.suite.api.SuiteDisplayName;
     playwright_serverest.produtos.ProductsPlaywrightTest.class,
     playwright_serverest.carrinhos.CartsPlaywrightTest.class
 })
-@ConfigurationParameter(key = "junit.jupiter.execution.parallel.config.strategy", value = "fixed")
-@ConfigurationParameter(key = "junit.jupiter.execution.parallel.config.fixed.parallelism", value = "4")
 public class ExecutionBuilderRunner {
 }

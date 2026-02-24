@@ -383,7 +383,7 @@ public class ProductsRestAssuredTest extends BaseApiTest {
         String token = getAdminToken();
 
         InputStream is = getClass().getClassLoader()
-            .getResourceAsStream("serverest/produtos/resources/productPayload.json");
+            .getResourceAsStream("restassured_serverest/produtos/resources/productPayload.json");
         if (is == null) {
             throw new IllegalStateException("productPayload.json not found in classpath");
         }

@@ -257,7 +257,7 @@ public class UsersPlaywrightTest extends BaseApiTest {
     void ct10_useVariablesForDynamicValidations() throws Exception {
         String expectedEmail = FakerUtils.randomEmail();
 
-        Map<String, Object> userPayload = loadJsonResource("serverest/usuarios/resources/userPayload.json");
+        Map<String, Object> userPayload = loadJsonResource("playwright_serverest/usuarios/resources/userPayload.json");
         userPayload.put("email", expectedEmail);
 
         APIResponse createResp = request.post("/usuarios", RequestOptions.create()
@@ -308,7 +308,7 @@ public class UsersPlaywrightTest extends BaseApiTest {
     @Test
     @DisplayName("CT12 - Create a user from fixed JSON file")
     void ct12_createUserFromFixedJsonFile() throws Exception {
-        Map<String, Object> userPayload = loadJsonResource("serverest/usuarios/resources/userPayload.json");
+        Map<String, Object> userPayload = loadJsonResource("playwright_serverest/usuarios/resources/userPayload.json");
         userPayload.put("email", FakerUtils.randomEmail());
 
         APIResponse resp = request.post("/usuarios", RequestOptions.create()
@@ -325,7 +325,7 @@ public class UsersPlaywrightTest extends BaseApiTest {
     @DisplayName("CT13 - Create and delete user based on JSON payload")
     void ct13_createAndDeleteUserBasedOnJsonPayload() throws Exception {
         String expectedEmail = FakerUtils.randomEmail();
-        Map<String, Object> userPayload = loadJsonResource("serverest/usuarios/resources/userPayload.json");
+        Map<String, Object> userPayload = loadJsonResource("playwright_serverest/usuarios/resources/userPayload.json");
         userPayload.put("email", expectedEmail);
 
         APIResponse createResp = request.post("/usuarios", RequestOptions.create()
